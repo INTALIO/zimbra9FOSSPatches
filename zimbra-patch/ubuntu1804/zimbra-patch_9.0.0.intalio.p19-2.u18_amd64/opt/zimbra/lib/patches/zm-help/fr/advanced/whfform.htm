@@ -1,0 +1,222 @@
+<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2008, 2009, 2010, 2012, 2014, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2008, 2009, 2010, 2012, 2014, 2016 Synacor, Inc. All Rights Reserved.
+ * ***** END LICENSE BLOCK *****
+-->
+<html>
+<head>
+<title>Search Form</title>
+
+<meta name="generator" content="Adobe RoboHelp 9" />
+<meta name="description" content="WebHelp 5.50" />
+</head>
+<style>
+<!--
+body {margin:0;}
+-->
+</style>
+<body bgcolor="#c0c0c0">
+<script language="javascript" src="whver.js"></script>
+<script language="javascript1.2" src="whmsg.js"></script>
+<script language="javascript1.2" src="whproxy.js"></script>
+<script language="javascript1.2" src="whutils.js"></script>
+<script language="javascript1.2" src="whform.js"></script>
+<script language="javascript1.2">
+<!--
+var gstrInput = "";
+var gstrSyn = "";
+var nNumRslt = 0 ;
+
+function ftsLookup(bCR)
+{
+	if (bCR)
+	{
+		var strInput = document.FtsInputForm.keywordField.value.toUpperCase();
+		if (strInput != "") {
+			var oMsg = new whMessage(WH_MSG_SEARCHFTSKEY, this, 1, strInput);
+			if (!SendMessage(oMsg))
+			{
+				gstrInput = strInput;
+			}
+			else
+			{
+				gstrInput = "";
+				gstrSyn = "";
+				nNumRslt = 0 ;
+			}
+		}
+
+		if (gbMac) {
+			document.FtsInputForm.keywordField.focus();
+		}
+	}
+	return;
+}
+
+function beforeInit()
+{
+	var oParam = new Object();
+	oParam.sValue = "";
+	var oMsg = new whMessage(WH_MSG_GETSEARCHS, this, 1, oParam);
+	if (SendMessage(oMsg))
+	{
+		if (oParam.sValue != "" && oParam.sValue != "- Rechercher -")
+		{
+			document.FtsInputForm.keywordField.value = oParam.sValue;
+			gfunLookUp(true);
+		}
+	}
+	init();	
+}
+
+function window_unload()
+{
+	UnRegisterListener2(this, WH_MSG_SHOWTOC);
+	UnRegisterListener2(this, WH_MSG_SHOWIDX);
+	UnRegisterListener2(this, WH_MSG_SHOWFTS);
+	UnRegisterListener2(this, WH_MSG_SHOWGLO);
+	UnRegisterListener2(this, WH_MSG_SEARCHTHIS);
+	UnRegisterListener2(this, WH_MSG_BACKUPSEARCH);
+	UnRegisterListener2(this, WH_MSG_HILITESEARCH);
+	UnRegisterListener2(this, WH_MSG_GETSEARCHSTR);
+	UnRegisterListener2(this, WH_MSG_SETSYNSTR);
+	UnRegisterListener2(this, WH_MSG_GETMAXRSLT);
+	UnRegisterListener2(this, WH_MSG_SETNUMRSLT);
+	UnRegisterListener2(this, WH_MSG_GETNUMRSLT);
+}
+
+function onSendMessage(oMsg)
+{
+	if (oMsg.nMessageId == WH_MSG_SHOWFTS)
+	{
+		document.FtsInputForm.keywordField.focus();
+	}
+	else if (oMsg.nMessageId == WH_MSG_SHOWIDX ||
+		oMsg.nMessageId == WH_MSG_SHOWTOC || 
+		oMsg.nMessageId == WH_MSG_SHOWGLO)
+	{
+		document.FtsInputForm.keywordField.blur();
+	}
+	else if (oMsg.nMessageId == WH_MSG_SEARCHTHIS)
+	{
+		if (oMsg.oParam != "- Rechercher -")
+		{
+			document.FtsInputForm.keywordField.value = oMsg.oParam;
+			gfunLookUp(true);
+		}
+	}
+	else if (oMsg.nMessageId == WH_MSG_BACKUPSEARCH)
+	{
+		if (gstrInput)
+		{
+			oMsg.oParam = gstrInput;
+			gstrInput = "";
+			gstrSyn = "";
+			nNumRslt = 0 ;
+			return false;
+		}
+	}
+	else if (oMsg.nMessageId == WH_MSG_HILITESEARCH)
+	{
+		var bHiLite = (document.FtsInputForm.HiLite.checked == true);
+		if (bHiLite == 1)
+			oMsg.oParam = true; 
+		else
+			oMsg.oParam = false;
+	}
+	else if (oMsg.nMessageId == WH_MSG_GETSEARCHSTR)
+	{
+		oMsg.oParam = "";
+		if (oMsg.oParam != "- Rechercher -")
+		{
+			oMsg.oParam = document.FtsInputForm.keywordField.value;
+			oMsg.oParam += " " + gstrSyn;
+		}	
+	}
+	else if(oMsg.nMessageId == WH_MSG_SETSYNSTR)
+	{
+		gstrSyn = oMsg.oParam;
+		
+	}
+	else if(oMsg.nMessageId == WH_MSG_GETMAXRSLT)
+	{
+		oMsg.oParam = document.FtsInputForm.MaxResults.value;	
+	}
+	else if(oMsg.nMessageId == WH_MSG_SETNUMRSLT)
+	{
+		nNumRslt = oMsg.oParam;		
+	}
+	else if(oMsg.nMessageId == WH_MSG_GETNUMRSLT)
+	{
+		oMsg.oParam = nNumRslt;	
+	}
+	return true;
+}
+
+if (window.gbWhForm)
+{
+	RegisterListener2(this, WH_MSG_SHOWTOC);
+	RegisterListener2(this, WH_MSG_SHOWIDX);
+	RegisterListener2(this, WH_MSG_SHOWFTS);
+	RegisterListener2(this, WH_MSG_SHOWGLO);
+	RegisterListener2(this, WH_MSG_SEARCHTHIS);
+	RegisterListener2(this, WH_MSG_BACKUPSEARCH);
+	RegisterListener2(this, WH_MSG_HILITESEARCH);
+	RegisterListener2(this, WH_MSG_GETSEARCHSTR);
+	RegisterListener2(this, WH_MSG_SETSYNSTR);
+	RegisterListener2(this, WH_MSG_GETMAXRSLT);
+	RegisterListener2(this, WH_MSG_SETNUMRSLT);
+	RegisterListener2(this, WH_MSG_GETNUMRSLT);
+	gfunLookUp = ftsLookup;
+	gfunInit = null;
+	gstrFormName = "FtsInputForm"
+	gsTitle = "Type in the word(s) to search for:";
+	gsTitle = "Taper le(s) mot(s) pour trouver:";
+	gsHiliteSearchTitle = "Highlight search results";
+	gsHiliteSearchTitle = "Mettre en surbrillance les résultats de la recherche";
+	gsMaxSearchTitle = "Search results per page" ;
+	gsMaxSearchTitle = "Résultats de la recherche par page";
+	setGoImage1("wht_go.gif");
+	setBackgroundcolor("#dddddd");
+	
+	setBtnType("image");
+	setGoImage1("go.gif");
+	
+	
+	setGoText("Aller");
+	setFont("Title", "Tahoma","8pt","Black","Normal","Normal","none");
+	
+	
+	var strHiliteSearchSetting = "enable,yellow,black";
+	strHiliteSearchSetting = "enable,#b2b4bf,black";
+	var searchSetting = strHiliteSearchSetting.match("^(.+),(.+),(.*)$");
+	if(searchSetting != null && searchSetting[1] == "enable")
+		setHighlightSearch(true);
+	document.write(getFormHTML());
+	writeFormStyle();
+	window.onload = beforeInit;
+	window.onunload=window_unload;
+}
+else
+	document.location.reload();
+//-->
+</script>
+</body>
+</html>

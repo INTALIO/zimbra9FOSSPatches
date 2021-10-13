@@ -1,0 +1,116 @@
+<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ *
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016 Synacor, Inc. All Rights Reserved.
+ *
+ * ***** END LICENSE BLOCK *****
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Index form</title>
+
+<meta name="generator" content="Adobe RoboHelp 10" />
+<meta name="description" content="WebHelp 5.50" />
+</head>
+<style>
+<!--
+body {margin:0;}
+-->
+</style>
+<body bgcolor="#c0c0c0">
+<script  src="whver.js" charset="utf-8"></script>
+<script  src="whmsg.js" charset="utf-8"></script>
+<script  src="whutils.js" charset="utf-8"></script>
+<script  src="whproxy.js" charset="utf-8"></script>
+<script  src="whform.js" charset="utf-8"></script>
+<script language="javascript1.2">
+<!--
+function indexLookup(bCR)
+{
+	var strInput = document.IndexInputForm.keywordField.value;
+	if (strInput != "") {
+		var iParam = new Object();
+		iParam.sInput = strInput;
+		iParam.bCR = bCR;
+		var oMessage = new whMessage(WH_MSG_SEARCHINDEXKEY, iParam, null);
+		notify(oMessage);
+	}
+	if (gbMac) {
+		document.IndexInputForm.keywordField.focus();
+	}
+}
+
+function window_Unload()
+{
+	unregisterListener2(WH_MSG_SHOWTOC);
+	unregisterListener2(WH_MSG_SHOWIDX);
+	unregisterListener2(WH_MSG_SHOWFTS);
+	unregisterListener2(WH_MSG_SHOWGLO);
+}
+
+function onReceiveNotification(oMessage)
+{
+	if (oMessage.msgId == WH_MSG_SHOWIDX)
+	{
+		document.IndexInputForm.keywordField.focus();
+	}
+	else if (oMessage.msgId == WH_MSG_SHOWFTS ||
+		oMessage.msgId == WH_MSG_SHOWTOC || 
+		oMessage.msgId== WH_MSG_SHOWGLO)
+	{
+		document.IndexInputForm.keywordField.blur();
+	}
+	return true;
+}
+
+if (window.gbWhForm)
+{
+	registerListener2(WH_MSG_SHOWTOC);
+	registerListener2(WH_MSG_SHOWIDX);
+	registerListener2(WH_MSG_SHOWFTS);
+	registerListener2(WH_MSG_SHOWGLO);
+	window.onunload=window_Unload;
+	window.onload = init;
+	gfunLookUp = indexLookup;
+	gfunInit = null;
+	gstrFormName = "IndexInputForm"
+	gsTitle = "Type in the keyword to find:";
+	gsTitle = "Type in the keyword to find:";
+
+	setBackgroundcolor("#dddddd");
+	
+	setBtnType("none");
+	
+	
+	
+	setGoText("Go");
+	setFont("Title", "Tahoma","8pt","Black","Normal","Normal","none");
+	
+	
+	document.write(getFormHTML("ndx"));
+	writeFormStyle();
+}
+else
+	document.location.reload();
+//-->
+</script>
+</body>
+</html>

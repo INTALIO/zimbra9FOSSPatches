@@ -1,0 +1,243 @@
+<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ *
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2014, 2015, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2014, 2015, 2016 Synacor, Inc. All Rights Reserved.
+ *
+ * ***** END LICENSE BLOCK *****
+-->
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 10" />
+<title>touch_client</title>
+<link rel="StyleSheet" href="../../zwc_8.css" type="text/css" />
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js" charset="utf-8"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../zimbra_user_help.htm", "", "&gt;", "Home", "../../advanced_web_client.htm");
+document.write("touch_client<\/p>");
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+onLoadHandler = function()
+{
+  if (window.setRelStartPage)
+	{
+	setTimeout("setRelStartPage('../../zimbra_user_help.htm');", 1)
+
+    setTimeout("UpdateBreadCrumbsMarker();", 1);
+	}
+}
+
+if (window.addEventListener){  
+	window.addEventListener('load', onLoadHandler, false);   
+} else if (window.attachEvent){  
+	window.attachEvent('onload', onLoadHandler);  
+}
+
+function onSetStartPage()
+{
+  autoSync(1);
+  sendSyncInfo();
+  sendAveInfoOut();
+}
+//-->
+//]]></script>
+<script type="text/javascript" src="../../ehlpdhtm.js" language="JavaScript1.2"></script>
+<div style="width: 100%; position: relative;" id="header">
+	<p><img src="../../zimbra_logo.png" alt="" style="border: none;" border="0" /></p>
+</div>
+
+<p>&#160;</p>
+<hr width="95%" align="left" />
+
+<p class="FM_ChapterTitle">Using the Touch Client</p>
+<p>The Zimbra Touch Client application is used on touch-capable mobile 
+ devices. Features include a sub-set of features found in the Zimbra Web 
+ Client, including Mail, Contacts and Calendar (read-only).</p>
+<p>Touch functionality is based on Sencha Touch open-source framework and 
+ can be customized.</p>
+<p class="FM_1Heading" style="text-indent: 0px; font-size: 12pt;">Supported 
+ Devices</p>
+<p>Supported devices for the Zimbra Touch Client include:</p>
+<ul style="list-style: disc;">
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">iOS6+: 
+	 iPad®, iPad mini®, iPhone®, iPod touch®</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">Android 
+	 4.0+ (Ice Cream Sandwich): Nexus 7, Nexus 10, Samsung Galaxy Tab™, 
+	 Samsung Galaxy S® III, Samsung Galaxy S® 4, Galaxy Nexus™</li>
+</ul>
+<h1 style="font-size: 12pt;">Supported Zimbra Applications</h1>
+<p>Supported Zimbra Applications include Zimbra Mail.</p>
+<h1>Using the Zimbra Touch Client</h1>
+<h2 style="font-family: Arial, sans-serif; font-size: 12pt;">Logging in</h2>
+<p>To access the touch client, enter the URL for the Zimbra Web Client 
+ with ?client=touch added to the URL, and the touch client loads.</p>
+<p>For example, https://mail.example.com/?client=touch.</p>
+<p>Enter your Username and Password, and touch Sign In.</p>
+<h2 style="font-family: Arial, sans-serif; font-size: 12pt;">Reading Mail</h2>
+<p>Your Inbox displays in the left message panel. To read your mail, touch 
+ the message you want to display and the message displays in the preview 
+ pane. </p>
+<h2 style="font-family: Arial, sans-serif; font-size: 12pt;">Reading Mail 
+ in Conversation View</h2>
+<p style="font-family: Arial, sans-serif;">You can read mail as a list 
+ of conversations. Conversation features include:</p>
+<ul style="list-style: disc;">
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">More conversations 
+	 are loaded as the list is scrolled</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">List of 
+	 conversations can be pulled down to refresh</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">Conversations 
+	 display all messages in the thread in the preview pane</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">Message 
+	 header can be collapsed, expanded, or detailed. Message content is 
+	 shown unless header is collapsed.</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">The number 
+	 of messages in a conversation are indicated by a number in a circle 
+	 in the message details.</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">The conversation 
+	 tool bar has quick links to Reply, Reply All, Forward, Trash and a 
+	 drop-down menu to mark, move, flag or tag the conversation.</li>
+</ul>
+<h2 style="font-family: Arial, sans-serif; font-size: 12pt;">Previewing 
+ Messages</h2>
+<p>To preview a message, touch the message you want to display and the 
+ message loads in the preview pane in full screen mode.</p>
+<p>To go back to your Inbox, touch &lt;Inbox. The message remains in the 
+ preview pane.</p>
+<h2 style="font-family: Arial, sans-serif; font-size: 12pt;">Composing 
+ New Mail</h2>
+<p>To compose a new mail message:</p>
+<ol style="list-style: decimal;">
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">From the 
+	 <span style="font-size: 10pt; font-weight: bold;"><font size="2" style="font-size:10pt;">Mail</font></span> tab 
+	 click <span style="font-size: 10pt; font-weight: bold;"><font size="2" style="font-size:10pt;">New Message</font></span> 
+	 and the <span style="font-weight: bold; font-size: 10pt;"><font size="2" style="font-size:10pt;">Compose</font></span> 
+	 dialog displays.</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">In the 
+	 <span style="font-weight: bold; font-size: 10pt;"><font size="2" style="font-size:10pt;">To</font></span> field, 
+	 enter the recipient’s email address.</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">In the 
+	 <span style="font-weight: bold; font-size: 10pt;"><font size="2" style="font-size:10pt;">Subject</font></span> field, 
+	 enter a brief description of the email message.</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">Compose 
+	 your email.</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">If you 
+	 want to add an attachment, click <span style="font-weight: bold; font-size: 10pt;"><font size="2" style="font-size:10pt;">Attach</font></span> 
+	 and select your attachment.</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;"><span>Click</span><span 
+	 style="font-weight: bold;"> </span><span style="font-weight: bold; 
+												 font-size: 10pt;"><font size="2" style="font-size:10pt;">Send</font></span>. 
+	 &#160;You can also save the message as a draft if you are not ready 
+	 to send the email.</li>
+</ol>
+<h2 style="font-family: Arial, sans-serif; font-size: 12pt;">Folders, Saved 
+ Searches, and Tags</h2>
+<p>Folders, saved searches, and tags shown in the Mail overview pane that 
+ slides in from the left. Scroll down to see Searches and Tags.</p>
+<h2 style="font-family: Arial, sans-serif; font-size: 12pt;">Using Search</h2>
+<p>To search your Inbox:</p>
+<ol style="list-style: decimal;">
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">Enter 
+	 the search criteria in the <span style="font-weight: bold;">Search</span> 
+	 field.</li>
+	<li style="font-family: Arial, sans-serif; font-size: 11pt;">Touch 
+	 <span style="font-weight: bold;">return</span>.</li>
+</ol>
+<p>Your search results display in the message pane.</p>
+<h2 style="font-family: Arial, sans-serif; font-size: 12pt;">Signing Out</h2>
+<p>Sign-out using the menu in the tool bar.</p>
+<p>-------------------------------------------------------------------------------------------------------<br />
+<font style="font-size: 8pt;" size="2">Copyright </font><span style="vertical-align: baseline;"><font 
+	 style="font-size: 7pt;" size="1">@ </font></span><font style="font-size: 8pt;" 
+															 size="2">2005-2017 
+ Synacor, Inc. All rights reserved. "Zimbra" is a registered trademark of Synacor, Inc.</font></p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>
