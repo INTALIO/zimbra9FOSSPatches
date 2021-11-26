@@ -1,0 +1,132 @@
+#!/usr/bin/perl
+# 
+# ***** BEGIN LICENSE BLOCK *****
+# Zimbra Collaboration Suite Server
+# Copyright (C) 2005, 2006, 2007, 2008, 2009, 2010, 2013, 2014, 2015, 2016 Synacor, Inc.
+#
+# This program is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software Foundation,
+# version 2 of the License.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+# without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License along with this program.
+# If not, see <https://www.gnu.org/licenses/>.
+# ***** END LICENSE BLOCK *****
+# 
+
+use lib "/opt/zimbra/common/lib/perl5";
+use strict;
+use JSON::PP;
+use Data::Dumper;
+
+use  Zimbra::Util::Common;
+use Zimbra::Mon::Logger;
+
+# Exit if software-only node.
+exit(0) unless (-f "/opt/zimbra/conf/localconfig.xml");
+
+$SIG{ALRM} = \&catchAlarm;
+
+my $platform=qx(/opt/zimbra/libexec/get_plat_tag.sh);
+chomp $platform;
+
+my $pidFile="/opt/zimbra/log/zmstatuslog.pid";
+
+my $TIMEOUT=60;
+my $MNTCMD;
+my $DFCMD;
+if ($platform eq "MACOSX") {
+	$MNTCMD = "mount -t hfs";
+	$DFCMD = "df -ml ";
+} else {
+	$MNTCMD = "mount -t ext3";
+	$DFCMD = "df -ml ";
+}
+
+my $dt = qx(date "+%Y-%m-%d %H:%M:%S");
+chomp $dt;
+
+my $hostname;
+
+checkPid();
+logStatus();
+clearPid();
+
+exit 0;
+
+sub logStatus {
+	my @status = ();
+  alarm($TIMEOUT);
+	open STATUS, "/opt/zimbra/bin/zmcontrol status |" or die "Can't get status: $!";
+	@status = <STATUS>;
+	close STATUS;
+
+	my $ismailboxrunning = '';
+	my $isaloggerserver = '';
+
+	foreach my $s (@status) {
+		if ($s =~ /is not/) {
+			next;
+		}
+		chomp $s;
+		if ($s =~ /^Host (.*)/) {
+			$hostname = $1;
+			next;
+		}
+		$s =~ s/ webapp//;
+		my ($service, $stat) = split ' ', $s, 2;
+
+		if (( $service eq 'mailbox' ) && ( $stat eq 'Running' )) {
+			$ismailboxrunning = 'found';
+		}
+
+		if (( $service eq 'logger' ) && ( $stat eq 'Running' )) {
+			$isaloggerserver = 'found';
+		}
+
+		Zimbra::Mon::Logger::LogStats( "info", "$dt, STATUS: ${hostname}: $service: $stat" );
+	}
+
+	if (($ismailboxrunning) && ($isaloggerserver)) {
+		if ( -e '/opt/zimbra/bin/zxsuite' ) {
+			my $docs_status = `/opt/zimbra/bin/zxsuite --json docs status`;
+			my $docs_hash = JSON::PP->new->utf8->decode($docs_status);
+			my $list_servers = $docs_hash->{'response'};
+			foreach my $server (@{$list_servers->{servers}}) {
+				my $status = 'Stopped';
+				if ( $server->{'status'} eq "online" ) {
+					$status = 'Running';
+				}
+				Zimbra::Mon::Logger::LogStats( "info", "$dt, STATUS: $server->{'name'}: docs: $status" );
+			}
+		}
+	}
+
+	alarm(0);
+}
+
+sub checkPid {
+  if (-f "$pidFile") {
+    my $P = qx(cat $pidFile);
+    chomp $P;
+    if ($P ne "") {
+      system("kill -0 $P 2> /dev/null");
+      if ($? == 0) {
+        print "$0 already running with pid $P\n";
+        exit 0;
+      }
+    }
+  }
+  qx(echo $$ > "$pidFile");
+}
+
+sub clearPid {
+  unlink($pidFile);
+}
+
+sub catchAlarm {
+		Zimbra::Mon::Logger::LogStats( "info", "zmstatuslog timeout after $TIMEOUT seconds"); 
+    exit 1;
+}

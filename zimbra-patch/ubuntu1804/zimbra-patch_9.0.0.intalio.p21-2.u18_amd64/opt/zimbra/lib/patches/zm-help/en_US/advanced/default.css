@@ -1,0 +1,175 @@
+/*
+ * ***** BEGIN LICENSE BLOCK *****
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2008, 2009, 2010, 2012, 2014, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2008, 2009, 2010, 2012, 2014, 2016 Synacor, Inc. All Rights Reserved.
+ * ***** END LICENSE BLOCK *****
+ */
+/*Created with Adobe RoboHelp 9.*/
+BODY {
+	font-family: Arial;
+	background-color: #ffffff;
+}
+H1 {
+	font-weight: bold;
+	font-size: 14pt;
+	color: #000000;
+}
+LI.H1 {
+	font-weight: bold;
+	color: #000080;
+	font-size: 14pt;
+}
+H2 {
+	font-weight: bold;
+	color: #000080;
+	font-size: 12pt;
+}
+LI.H2 {
+	font-weight: bold;
+	color: #000080;
+	font-size: 12pt;
+}
+H3 {
+	font-weight: bold;
+	color: #000080;
+	font-size: 11pt;
+}
+LI.H3 {
+	font-weight: bold;
+	color: #000080;
+	font-size: 11pt;
+}
+H4 {
+	font-weight: bold;
+	font-size: 11pt;
+	margin-bottom: 6.5pt;
+}
+LI.H4 {
+	font-weight: bold;
+	font-size: 11pt;
+}
+H5 {
+	font-weight: bold;
+	font-size: 10.0pt;
+}
+LI.H5 {
+	font-weight: bold;
+	font-size: 10.0pt;
+}
+H6 {
+	font-weight: bold;
+	background-color: Transparent;
+	font-size: 10pt;
+	margin-bottom: 6pt;
+	color: #000080;
+	margin-top: 8pt;
+}
+LI.H6 {
+	font-weight: bold;
+	font-size: 10pt;
+	color: #000080;
+}
+P {
+	margin-top: 0pt;
+	font-size: 10pt;
+	margin-bottom: 6pt;
+}
+LI.P {
+	font-size: 10pt;
+}
+A.expandspot {
+	cursor: hand;
+	font-weight: bold;
+	font-style: italic;
+	color: #008080;
+	text-decoration: none;
+}
+SPAN.expandtext {
+	font-style: italic;
+	font-weight: normal;
+	font-size: 11pt;
+	color: #000000;
+}
+A.dropspot {
+	cursor: hand;
+	color: #008080;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;
+}
+A.glossterm {
+	color: #800000;
+	cursor: hand;
+	font-style: italic;
+	text-decoration: none;
+}
+SPAN.glosstext {
+	font-style: italic;
+	font-weight: normal;
+	color: #0000ff;
+}
+OL,
+UL {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+}
+P.Reviewstatements {
+	color: #ff0000;
+	x-next-class: ;
+	x-next-type: P;
+}
+LI.P-Reviewstatements {
+	color: #ff0000;
+}
+SPAN.REVIEWFOLLOWUP {
+	font-style: italic;
+	font-weight: normal;
+	color: #ff0000;
+}
+SPAN.Important {
+	font-size: 11pt;
+	font-weight: bold;
+	font-style: normal;
+	color: #000080;
+}
+SPAN.fieldnames {
+	font-weight: bold;
+	font-style: normal;
+	font-size: 10pt;
+}
+SPAN.code {
+	font-weight: bold;
+	font-style: normal;
+	font-family: "Times New Roman", serif;
+	font-size: 12pt;
+}
+SPAN.attribute {
+	font-weight: bold;
+	font-style: normal;
+}
+P.note {
+	background-color: #cccccc;
+}
+LI.P-note {
+}
+li.Style1 {
+	font-size: 10pt;
+}

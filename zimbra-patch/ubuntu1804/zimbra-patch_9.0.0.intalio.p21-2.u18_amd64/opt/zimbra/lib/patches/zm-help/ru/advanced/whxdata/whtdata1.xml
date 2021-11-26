@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2008, 2009, 2010, 2012, 2013, 2014, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2008, 2009, 2010, 2012, 2013, 2014, 2016 Synacor, Inc. All Rights Reserved.
+ * ***** END LICENSE BLOCK *****
+-->
+<tocdata>
+<item name="Использование адресных книг" url="zwc_help_files/6_address_book/using_address_books.htm" />
+<item name="Добавление контактов в адресную книгу" url="zwc_help_files/6_address_book/adding_contacts_to_an_address_book.htm" />
+<item name="Автоматическое добавление контактов в список «Отправленные по электронной почте контакты»" url="zwc_help_files/6_address_book/automatically_add_contacts_to_emailed_contacts_list.htm" />
+<item name="Изменение контактной информации" url="zwc_help_files/6_address_book/editing_contact_information.htm" />
+<item name="Проверка наличия адреса электронной почты в адресной книге" url="zwc_help_files/6_address_book/check_if_an_email_address_is_in_your_address_book.htm" />
+<item name="Создание группы контактов" url="zwc_help_files/6_address_book/creating_a_contact_group.htm" />
+<item name="Добавление участников в список групп контактов" url="zwc_help_files/6_address_book/adding_members_to_a_contact_group_list.htm" />
+<item name="Добавление нового контакта из существующего сообщения электронной почты" url="zwc_help_files/6_address_book/add_a_new_contact_from_an_existing_email_message.htm" />
+<item name="Перемещение контакта в другую адресную книгу" url="zwc_help_files/6_address_book/moving_a_contact_to_another_address_book.htm" />
+<item name="Пересылка контактной информации" url="zwc_help_files/6_address_book/forwarding_contact_information.htm" />
+<item name="Ведение списка надежных адресов" url="zwc_help_files/2_manage_email/maintaining_a_trusted_addresses_list.htm" />
+<item name="Импорт адресной книги" url="zwc_help_files/6_address_book/importing_an_address_book.htm" />
+<item name="Экспорт адресной книги" url="zwc_help_files/6_address_book/exporting_an_address_book.htm" />
+<item name="Печать имени контакта или адресной книги" url="zwc_help_files/6_address_book/printing_a_contact_name_or_address_book.htm" />
+<item name="Удаление контактов" url="zwc_help_files/6_address_book/deleting_contacts.htm" />
+<item name="Управление списками рассылки" url="zwc_help_files/6_address_book/managing_distribution_lists.htm" />
+<item name="Создание списков рассылки" url="zwc_help_files/6_address_book/create_distribution_lists.htm" />
+
+</tocdata>

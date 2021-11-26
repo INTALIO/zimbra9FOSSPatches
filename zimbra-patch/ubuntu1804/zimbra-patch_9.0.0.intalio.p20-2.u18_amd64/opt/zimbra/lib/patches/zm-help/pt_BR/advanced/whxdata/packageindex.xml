@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2010, 2011, 2012, 2013, 2014, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2010, 2011, 2012, 2013, 2014, 2016 Synacor, Inc. All Rights Reserved.
+ * ***** END LICENSE BLOCK *****
+-->
+<cki><ck fm="!" to="-"/><ck fm="/" to="abre"/><ck fm="abri" to="anexado"/><ck fm="anexados" to="assinaturas"/><ck fm="assine" to="buscar"/><ck fm="buscas" to="clique"/><ck fm="clássica" to="conexões"/><ck fm="confia" to="cota"/><ck fm="cotas" to="de"/><ck fm="decide" to="diretamente"/><ck fm="diretório" to="e"/><ck fm="e-mail" to="entrada"/><ck fm="entradas" to="exclui"/><ck fm="excluindo" to="foram"/><ck fm="forem" to="incluindo"/><ck fm="incluir" to="lique"/><ck fm="lista" to="marcadores"/><ck fm="marcados" to="mover"/><ck fm="movida" to="nomes"/><ck fm="normal" to="obrigatório"/><ck fm="observa" to="outras"/><ck fm="outro" to="pasta"/><ck fm="pastas" to="porta-arquivos"/><ck fm="portanto" to="quando"/><ck fm="quantas" to="remota"/><ck fm="remoto" to="selecionados"/><ck fm="selecionando" to="sintaxe"/><ck fm="sinônimo" to="também"/><ck fm="tanto" to="um"/><ck fm="uma" to="visualizar"/><ck fm="visualização" to="é"/><ck fm="êxito" to="™"/></cki>

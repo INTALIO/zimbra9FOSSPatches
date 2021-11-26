@@ -1,0 +1,88 @@
+<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ *
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016 Synacor, Inc. All Rights Reserved.
+ *
+ * ***** END LICENSE BLOCK *****
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> Navigation Pane </title>
+
+<meta name="generator" content="Adobe RoboHelp 10" />
+<meta name="description" content="WebHelp 5.50" />
+</head>
+<body border=0 topmargin=0 bottommargin=0 rightmargin=0 leftmargin=0 scroll=no>
+<script  src="whver.js" charset="utf-8"></script>
+<script  src="whmozemu.js" charset="utf-8"></script>
+<script  src="whutils.js" charset="utf-8"></script>
+<script  src="whmsg.js" charset="utf-8"></script>
+<script  src="whproxy.js" charset="utf-8"></script>
+<script  src="whphost.js" charset="utf-8"></script>
+<script language="javascript1.2">
+<!--
+if (window.gbWhPHost)
+{
+	var gsNavReDirect="whskin_plist.htm";
+	var gbReDirectThis=true;
+	var oMsg = new whMessage(WH_MSG_GETPANES, null, null);
+	request(oMsg, onGetPanesInfo);
+}
+else
+	document.location.reload();
+
+if (window.gbNav6)
+{
+	var oMsg=new whMessage(WH_MSG_RELOADNS6,null,null);
+	notify(oMsg);
+}
+
+function onGetPanesInfo(oMsg)
+{
+    if (oMsg.oParam)
+	{
+		for (var i=0;i<oMsg.oParam.aPanes.length;i++)
+		{
+			addPane(oMsg.oParam.aPanes[i].sPaneName, oMsg.oParam.aPanes[i].sPaneURL);
+		}
+		setShowPane(oMsg.oParam.sDefault);
+		setServerEnabled();
+	}
+	else
+		writeWebHelpPane();
+}
+
+function writeWebHelpPane()
+{
+  var bPreferXML	      = false;
+  var strProjectFileXML =  "whproj.xml";
+  var strProjectFileHTM =  "whproj.htm";	
+  addProject(bPreferXML, strProjectFileXML, strProjectFileHTM);
+  addPane("toc","whtdhtml.htm");
+  addPane("idx","whidhtml.htm");
+  addPane("fts","whfdhtml.htm");
+  setShowPane("toc");
+
+}
+//-->
+</script>
+</body>
+</html>

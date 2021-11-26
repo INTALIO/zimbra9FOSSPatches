@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2009, 2010, 2011, 2012, 2013, 2014, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2009, 2010, 2011, 2012, 2013, 2014, 2016 Synacor, Inc. All Rights Reserved.
+ * ***** END LICENSE BLOCK *****
+-->
+<tocdata>
+<item name="建立資料夾" url="zwc_help_files/5_organize_account/create_a_folder.htm" />
+<item name="重新命名資料夾" url="zwc_help_files/5_organize_account/rename_a_folder.htm" />
+<item name="刪除資料夾" url="zwc_help_files/5_organize_account/delete_a_folder.htm" />
+<item name="建立標記" url="zwc_help_files/5_organize_account/create_a_tag.htm" />
+<item name="在條目上指定標記" url="zwc_help_files/5_organize_account/assign_a_tag_to_an_item.htm" />
+<item name="更改標記顏色" url="zwc_help_files/5_organize_account/change_a_tag_color.htm" />
+<item name="重新命名標記" url="zwc_help_files/5_organize_account/rename_a_tag.htm" />
+<item name="用標記搜尋項目" url="zwc_help_files/5_organize_account/search_for_items_by_tag.htm" />
+<item name="顯示有特定標記郵件" url="zwc_help_files/5_organize_account/display_messages_with_a_specific_tag.htm" />
+<item name="移除標記" url="zwc_help_files/5_organize_account/remove_a_tag.htm" />
+<item name="刪除標記" url="zwc_help_files/5_organize_account/delete_a_tag.htm" />
+<item name="標記郵件或對話" url="zwc_help_files/5_organize_account/flag_a_message_or_conversation.htm" />
+<item name="從郵件或對話中移除標記" url="zwc_help_files/5_organize_account/remove_a_flag_from_a_message_or_conversation.htm" />
+
+</tocdata>

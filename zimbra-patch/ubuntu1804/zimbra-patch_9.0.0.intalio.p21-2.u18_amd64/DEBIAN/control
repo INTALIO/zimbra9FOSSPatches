@@ -1,0 +1,9 @@
+Package: zimbra-patch
+Version: 9.0.0.intalio.p21-2.u18
+Architecture: amd64
+Maintainer: Intalio <intalio@intalio.pl>
+Installed-Size: 241289
+Depends: zimbra-store (>= 9.0.0), zimbra-common-core-jar (>= 9.0.0.1634918163-1.u18), zimbra-mbox-webclient-war (>= 9.0.0.1635814095-1.u18), zimbra-mbox-admin-console-war (>= 9.0.0.1631853698-1.u18), zimbra-common-core-libs (>= 9.0.0.1623914106-1.u18), zimbra-common-mbox-conf-attrs (>= 9.0.0.1602835824-1.u18), zimbra-common-mbox-conf-msgs (>= 9.0.0.1604312801-1.u18), zimbra-mbox-store-libs (>= 9.0.0.1626439337-1.u18), zimbra-mbox-war (>= 9.0.0.1618222842-1.u18), zimbra-timezone-data (>= 3.0.0.1618571554-1.u18), zimbra-store-components (>= 1.0.3), zimbra-core-components (>= 3.0.10)
+Section: mail
+Priority: optional
+Description: Zimbra FOSS Patch

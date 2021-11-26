@@ -1,0 +1,107 @@
+#!/bin/bash
+if [ -f /opt/zimbra/libexec/zmsetup.pl ]
+then
+    cp -af /opt/zimbra/lib/patches/zmsetup.pl  /opt/zimbra/libexec/zmsetup.pl
+fi
+
+if [ -f /opt/zimbra/lib/ext/convertd/zimbraconvertd.jar ]; then
+   echo "*** updating zimbraconvertd jar ***"
+   mv -f /opt/zimbra/lib/patches/zimbraconvertd.jar /opt/zimbra/lib/ext/convertd/zimbraconvertd.jar
+   mv -f /opt/zimbra/lib/patches/tika-app-1.24.1.jar /opt/zimbra/lib/ext/convertd/tika-app-1.24.1.jar
+fi
+
+if [ -f /opt/zimbra/lib/ext/zm-oauth-social/zmoauthsocial.jar ]
+then
+   echo "*** updating zmoauthsocial.jar and zm-oauth-social-common.jar ***"
+   mv -f /opt/zimbra/lib/patches/zm-oauth-social/zmoauthsocial.jar /opt/zimbra/lib/ext/zm-oauth-social/zmoauthsocial.jar
+   mv -f /opt/zimbra/lib/patches/zm-oauth-social/zm-oauth-social-common.jar /opt/zimbra/lib/ext-common/zm-oauth-social-common.jar
+fi
+
+if [ -f /opt/zimbra/libexec/zmmailboxdmgr ]
+then
+   cp -af /opt/zimbra/lib/patches/zmstatuslog  /opt/zimbra/libexec/zmstatuslog
+   cp -af /opt/zimbra/lib/patches/zmstat-chart-config /opt/zimbra/bin/zmstat-chart-config
+   cp -af /opt/zimbra/lib/patches/zmsyslogsetup  /opt/zimbra/libexec/zmsyslogsetup
+   cp -af /opt/zimbra/lib/patches/zmfixperms  /opt/zimbra/libexec/zmfixperms
+   cp -af /opt/zimbra/lib/patches/zmskindeploy /opt/zimbra/bin/zmskindeploy
+   cp -af /opt/zimbra/lib/patches/zmdhparam /opt/zimbra/bin/zmdhparam
+   cp -af /opt/zimbra/lib/patches/I18nMsg_zh_TW.properties /opt/zimbra/jetty_base/webapps/zimbraAdmin/WEB-INF/classes/messages/I18nMsg_zh_TW.properties
+fi
+
+if [ -f /opt/zimbra/conf/globs2 ]
+then
+    cp -af /opt/zimbra/lib/patches/globs2 /opt/zimbra/conf/globs2
+fi
+
+if [ -d /opt/zimbra/lib/ext/smime ]; then
+   echo "*** Updating Smime jars ***"
+   rm -f /opt/zimbra/lib/ext/smime/zm-smime-store*.jar
+   cp -f /opt/zimbra/lib/patches/zm-smime-store.jar /opt/zimbra/lib/ext/smime/zm-smime-store.jar
+fi
+
+if [ -f /opt/zimbra/extensions-network-extra/saml/samlextn.jar ]; then
+   echo "*** updating samlextn.jar jar ***"
+   mv -f /opt/zimbra/lib/patches/samlextn.jar /opt/zimbra/extensions-network-extra/saml/samlextn.jar
+fi
+
+if [ -f /opt/zimbra/jetty_base/etc/service.web.xml.in ]
+then
+    cp -af /opt/zimbra/lib/patches/service.web.xml.in /opt/zimbra/jetty_base/etc/service.web.xml.in
+fi
+
+if [ -f /opt/zimbra/jetty_base/etc/jetty.xml.in ]
+then
+    cp -af /opt/zimbra/lib/patches/jetty.xml.in /opt/zimbra/jetty_base/etc/jetty.xml.in
+fi
+
+if [ -f /opt/zimbra/jetty_base/etc/webdefault.xml ]
+then
+    cp -af /opt/zimbra/lib/patches/webdefault.xml  /opt/zimbra/jetty_base/etc/webdefault.xml
+fi
+cp -af /opt/zimbra/lib/patches/common-passwords.txt /opt/zimbra/conf/common-passwords.txt
+
+if [ ! -d "/opt/zimbra/conf/saml" ]
+then
+    mkdir -p /opt/zimbra/conf/saml
+fi
+
+cp -af /opt/zimbra/lib/patches/saml-config.properties /opt/zimbra/conf/saml/saml-config.properties
+cp -r /opt/zimbra/lib/patches/zm-help/* /opt/zimbra/jetty_base/webapps/zimbra/help/
+cp -af /opt/zimbra/lib/patches/migrate20210809-UnsubscribeFolder.pl /opt/zimbra/libexec/scripts/migrate20210809-UnsubscribeFolder.pl
+chmod 755 /opt/zimbra/libexec/scripts/migrate20210809-UnsubscribeFolder.pl
+
+if [ -f /opt/zimbra/conf/amavisd.conf.in ]
+then
+    cp -af /opt/zimbra/lib/patches/amavisd.conf.in  /opt/zimbra/conf/amavisd.conf.in
+fi
+
+if [ -f /opt/zimbra/common/lib/jylibs/ldap.py ]
+then
+    cp -af /opt/zimbra/lib/patches/ldap.py  /opt/zimbra/common/lib/jylibs/ldap.py
+fi
+
+for zimlet in com_zimbra_mailarchive.zip com_zimbra_phone.zip com_zimbra_srchhighlighter.zip com_zimbra_webex.zip com_zimbra_ymemoticons.zip com_zimbra_email.zip
+do
+  cp -af /opt/zimbra/lib/patches/$zimlet /opt/zimbra/zimlets/$zimlet
+  su - zimbra -c "zmmailboxdctl status"
+  if [ $? -ne 0 ]; then
+     echo "*** Mailbox is not running... ***"
+     echo "*** Follow the steps below as zimbra user ignore if installing through install.sh .. ***"
+     echo "*** zmzimletctl deploy /opt/zimbra/zimlets/$zimlet ***"
+     echo "*** zmprov fc zimlet ***"
+  else
+     echo "*** Deploying $zimlet ***"
+     su - zimbra -c  "zmzimletctl deploy /opt/zimbra/zimlets/$zimlet"
+     su - zimbra -c  "zmprov fc zimlet"
+  fi
+done
+
+echo "**** Fixing up the permission ****"
+/opt/zimbra/libexec/zmfixperms
+/opt/zimbra/libexec/zmsyslogsetup
+
+date=`date +%s`
+echo $date": CONFIGURED patch9.0.0_P21" >> /opt/zimbra/.install_history
+echo "**** Installation Completed. ****"
+echo "**** Restart all the service as zimbra user. Run zmcontrol restart. ****"
+

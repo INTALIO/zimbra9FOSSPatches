@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2009, 2010, 2011, 2012, 2013, 2014, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2009, 2010, 2011, 2012, 2013, 2014, 2016 Synacor, Inc. All Rights Reserved.
+ * ***** END LICENSE BLOCK *****
+-->
+<tocdata>
+<item name="Travailler avec des filtres de mails" url="zwc_help_files/4_filters/working_with_email_filters.htm" />
+<item name="Création d'un filtre" url="zwc_help_files/4_filters/creating_a_filter.htm" />
+<item name="Création d'un filtre à partir d'un mail" url="zwc_help_files/4_filters/creating_a_filter_from_an_email_message.htm" />
+<item name="Création d'un filtre pour les invitations de calendrier" url="zwc_help_files/4_filters/creating_a_filter_for_calendar_invitations.htm" />
+<item name="Activation et désactivation d'un filtre" url="zwc_help_files/4_filters/making_a_filter_active_or_inactive.htm" />
+<item name="Conditions de filtre" url="zwc_help_files/4_filters/filter_conditions.htm" />
+<item name="Conditions et actions de filtre prises en charge" url="zwc_help_files/4_filters/filter_conditions_and_actions_supported.htm" />
+<item name="Actions de règles de filtre" url="zwc_help_files/4_filters/filter_rule_actions.htm" />
+<item name="Filtrer à l'aide des caractères de substitution" url="zwc_help_files/4_filters/filtering_using_wildcards.htm" />
+<item name="Affichage des filtres" url="zwc_help_files/4_filters/viewing_filters.htm" />
+<item name="Modification d'un filtre" url="zwc_help_files/4_filters/editing_a_filter.htm" />
+<item name="Application d'un filtre" url="zwc_help_files/4_filters/applying_a_filter.htm" />
+
+</tocdata>

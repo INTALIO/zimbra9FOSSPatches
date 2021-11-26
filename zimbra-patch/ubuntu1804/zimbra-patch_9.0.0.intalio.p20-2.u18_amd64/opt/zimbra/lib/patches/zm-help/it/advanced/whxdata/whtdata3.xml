@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2008, 2009, 2010, 2012, 2013, 2014, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2008, 2009, 2010, 2012, 2013, 2014, 2016 Synacor, Inc. All Rights Reserved.
+ * ***** END LICENSE BLOCK *****
+-->
+<tocdata>
+<item name="Uso dell'Elenco impegni" url="zwc_help_files/9_tasks/using_task_lists.htm" />
+<item name="Creazione di un elenco impegni" url="zwc_help_files/9_tasks/creating_a_task_list.htm" />
+<item name="Creazione di un impegno" url="zwc_help_files/9_tasks/creating_a_task.htm" />
+<item name="Creazione di un impegno dettagliato" url="zwc_help_files/9_tasks/create_a_detailed_task.htm" />
+<item name="Aggiornamento di un impegno" url="zwc_help_files/9_tasks/update_a_task.htm" />
+<item name="Come filtrare gli impegni per stato" url="zwc_help_files/9_tasks/filter_tasks_by_status.htm" />
+<item name="Ordinamento degli impegni in un elenco impegno" url="zwc_help_files/9_tasks/sorting_tasks_within_a_task_list.htm" />
+<item name="Visualizzazione degli impegni nel riquadro di lettura" url="zwc_help_files/9_tasks/viewing_tasks_in_the_reading_pane.htm" />
+<item name="Spostamento di un impegno in un altro elenco" url="zwc_help_files/9_tasks/moving_a_task_to_another_list.htm" />
+<item name="Contrassegnazione di un impegno come completo" url="zwc_help_files/9_tasks/mark_a_task_complete.htm" />
+<item name="Stampa di un impegno o di un elenco impegni" url="zwc_help_files/9_tasks/printing_a_task_or_task_list.htm" />
+<item name="Importazione di elenchi impegni" url="zwc_help_files/9_tasks/importing_a_task_lists.htm" />
+<item name="Esportazione di un elenco impegni" url="zwc_help_files/9_tasks/exporting_a_task_list.htm" />
+<item name="Eliminazione di un impegno o di un elenco impegni" url="zwc_help_files/9_tasks/deleting_a_task_or_task_list.htm" />
+
+</tocdata>

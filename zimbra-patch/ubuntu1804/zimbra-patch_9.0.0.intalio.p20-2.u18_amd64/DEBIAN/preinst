@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "**** Installing zimbra-patch ****" >> /opt/zimbra/.install_history
+

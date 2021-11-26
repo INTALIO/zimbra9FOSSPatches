@@ -1,0 +1,91 @@
+<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ *
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2008, 2009, 2010, 2012, 2014, 2015, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2008, 2009, 2010, 2012, 2014, 2015, 2016 Synacor, Inc. All Rights Reserved.
+ *
+ * ***** END LICENSE BLOCK *****
+-->
+
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<script type="text/javascript" language="javascript" src="whver.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" src="whutils.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" src="whmsg.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" >
+<!--
+if (!window.gbWhVer||!window.gbWhUtil||!window.gbWhMsg)
+	document.location.reload();
+//-->
+</script>
+
+<script type="text/javascript" src="whutils.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" src="whproxy.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript">
+<!--
+if (!window.gbWhProxy)
+	document.location.reload();
+//-->
+</script>
+
+<script language="javascript">
+<!--
+var gsPane="";
+var gnType=3;
+
+var oMsgPane = new whMessage(WH_MSG_GETPANETYPE, null, null);
+request(oMsgPane, onGetPaneType);
+
+function onGetPaneType(oMsg)
+{
+  if(oMsg && oMsg.oParam)
+  {
+    gsPane = oMsg.oParam.sPaneURL;
+	  gnType = oMsg.oParam.nType;
+    var strHTML = "";
+    if (gnType == 4)
+    {
+	    //no navipane at all
+	    strHTML += "<frameset border=\"0\" cols=\"100%,*\">";
+	    strHTML += "<frame src='whskin_mbars.htm' id='minibar' frameborder='0' border='0' scrolling='no' marginheight='0' title='Mini Toolbar'></frame>";
+	    strHTML += "<frame src=\"whskin_blank.htm\" noresize>";
+	    strHTML += "</frameset>";
+    }
+    else
+	    strHTML += "<frameset rows=\"26,*\" hostof=\"parent:minibar|navpane!startpage:no\" frameborder=\"0\" border=\"0\"> <frame src=\"whskin_mbars.htm\" id=\"minibar\" frameborder=\"0\" border=\"0\" scrolling=\"no\" marginheight=\"0\" title=\"Mini Toolbar\"></frame> <frame src=\""+gsPane+"\" id=\"navpane\" frameborder=\"0\" border=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" title=\"Navigator Pane\"></frame></frameset>";
+
+    if(isChromeLocal())
+        {	
+		      var obj = document.getElementsByTagName('body')[0];
+		      if(obj.parentNode)
+			      obj.parentNode.removeChild(obj);
+		      else
+			      obj.outerHTML="";
+		      document.documentElement.innerHTML += strHTML;
+	      }
+    else
+      document.write(strHTML);
+  }
+}
+//-->
+</script>
+</html>
